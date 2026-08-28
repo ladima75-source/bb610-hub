@@ -63,3 +63,50 @@ footer i{display:block;width:1px;height:16px;background:currentColor}
 
 /* BB610 HUB — footer removed; original desktop scale preserved */
 footer { display: none !important; }
+
+/* BB610 HUB — MOBILE: sticky master logo + one-card-per-screen scroll snap */
+@media (max-width:767px){
+  html{scroll-snap-type:y mandatory;scroll-padding-top:150px}
+  body{background:#000}
+  .page{overflow:visible;min-height:100dvh}
+  .page-glow{position:fixed}
+  .container{padding:0 16px 18px}
+
+  .site-logo{
+    position:sticky;
+    top:0;
+    z-index:20;
+    min-height:150px;
+    height:150px;
+    justify-content:center;
+    background:linear-gradient(to bottom,#000 82%,rgba(0,0,0,.96) 92%,rgba(0,0,0,0));
+  }
+  .site-logo-image{width:min(280px,72vw);max-height:118px}
+
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    margin-top:0;
+    gap:14px;
+  }
+  .card{
+    aspect-ratio:auto;
+    height:calc(100dvh - 164px);
+    min-height:430px;
+    max-height:680px;
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+  }
+  .card-content{padding:28px 24px 30px}
+  .card-logo{width:min(235px,66%);height:88px}
+  .card-bottom p{font-size:clamp(15px,4.2vw,19px);max-width:68%}
+}
+
+@media (max-width:420px){
+  html{scroll-padding-top:132px}
+  .site-logo{min-height:132px;height:132px}
+  .site-logo-image{width:min(245px,70vw);max-height:104px}
+  .card{height:calc(100dvh - 146px);min-height:400px}
+  .card-content{padding:24px 20px 26px}
+  .card-logo{width:min(205px,68%);height:78px}
+}
