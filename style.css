@@ -1,6 +1,6 @@
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:#000}
-body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#eef0f3;-webkit-font-smoothing:antialiased}
+body{font-family:Arial,Helvetica,sans-serif;color:#eef0f3;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 .page{position:relative;min-height:100vh;overflow:hidden;background:#000}
 .page-glow{position:absolute;inset:0;pointer-events:none;background:
@@ -17,8 +17,8 @@ radial-gradient(70% 60% at 50% 60%,rgba(46,48,52,.22),transparent 75%)}
 .card{--accent:#fff;position:relative;display:block;overflow:hidden;aspect-ratio:616/365;border-radius:20px;border:1px solid color-mix(in srgb,var(--accent) 48%,transparent);background:linear-gradient(145deg,rgba(46,47,50,.85),rgba(20,21,23,.9) 45%,#080808 100%);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 18px 50px -20px rgba(0,0,0,.9),0 0 22px -12px color-mix(in srgb,var(--accent) 40%,transparent),inset 0 0 40px -18px color-mix(in srgb,var(--accent) 22%,transparent);cursor:pointer;transition:box-shadow .35s ease,border-color .35s ease}
 .card:hover{border-color:color-mix(in srgb,var(--accent) 82%,transparent);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 18px 50px -20px rgba(0,0,0,.9),0 0 42px -8px color-mix(in srgb,var(--accent) 60%,transparent),inset 0 0 60px -16px color-mix(in srgb,var(--accent) 34%,transparent)}
 .garden{--accent:#70c329}.water{--accent:#0aa8ff}.market{--accent:#ff6a00}.berry{--accent:#9854e6}
-.card-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;filter:brightness(.86) saturate(1.08) contrast(1.03);transform:scale(1.01)}
-.card-fade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.54) 34%,rgba(0,0,0,.18) 63%,rgba(0,0,0,.06) 100%)}
+.card-image{position:absolute;top:0;right:0;width:48%;height:100%;object-fit:cover;object-position:center right;-webkit-mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.4) 26%,#000 60%);mask-image:linear-gradient(to right,transparent 0%,rgba(0,0,0,.4) 26%,#000 60%)}
+.card-fade{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.9),rgba(0,0,0,.45) 45%,transparent 70%)}
 .card-content{position:relative;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:64px 32px 42px 80px}
 .brand-mini{display:flex;align-items:flex-end;gap:2px}
 .brand-mini .bb,.brand-mini .n610{font-size:50px;font-weight:800;line-height:1}
@@ -28,7 +28,7 @@ radial-gradient(70% 60% at 50% 60%,rgba(46,48,52,.22),transparent 75%)}
 .divider path{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round}
 .card-bottom .icon{width:32px;height:32px;color:var(--accent)}
 .icon path,.icon circle{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
-.card-bottom p{margin:14px 0 0;max-width:68%;font-size:23px;line-height:1.28;font-weight:650;letter-spacing:-.018em;color:#fff;text-wrap:balance;text-shadow:0 2px 14px rgba(0,0,0,.95),0 1px 3px rgba(0,0,0,.9)}
+.card-bottom p{margin:12px 0 0;max-width:62%;font-size:21px;line-height:1.38;color:#edf0f4}
 footer{margin-top:36px;display:flex;align-items:center;justify-content:center;gap:16px;font-size:13px;letter-spacing:.2em;color:#888d95;opacity:.5;text-align:center}
 footer i{display:block;width:1px;height:16px;background:currentColor}
 @media (max-width:767px){
@@ -38,14 +38,14 @@ footer i{display:block;width:1px;height:16px;background:currentColor}
   .systems{font-size:13px}
   .grid{grid-template-columns:1fr;margin-top:32px;gap:18px}
   .card{aspect-ratio:5/4}
-  .card-image{width:100%;filter:brightness(.82) saturate(1.12) contrast(1.04);object-position:center}
+  .card-image{width:50%}
   .card-content{padding:24px}
   .brand-mini .bb,.brand-mini .n610{font-size:30px}
   .leaf-mini{width:26px;height:26px}
   .direction{font-size:26px}
   .divider{width:150px}
   .card-bottom .icon{width:28px;height:28px}
-  .card-bottom p{font-size:19px;line-height:1.25;font-weight:650;max-width:82%;letter-spacing:-.02em}
+  .card-bottom p{font-size:15px;max-width:62%}
   footer{flex-wrap:wrap;font-size:11px;gap:10px}
 }
 
@@ -63,10 +63,3 @@ footer i{display:block;width:1px;height:16px;background:currentColor}
 
 /* BB610 HUB — footer removed; original desktop scale preserved */
 footer { display: none !important; }
-
-@media (max-width:767px){
-  .card-fade{background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.04) 38%,rgba(0,0,0,.18) 58%,rgba(0,0,0,.78) 100%),linear-gradient(90deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.12) 58%,rgba(0,0,0,.03) 100%)}
-  .card-bottom{position:relative;isolation:isolate}
-  .card-bottom::before{content:"";position:absolute;z-index:-1;left:-14px;bottom:-12px;width:min(92%,360px);height:132px;border-radius:18px;background:radial-gradient(ellipse at 22% 78%,rgba(0,0,0,.66),rgba(0,0,0,.28) 58%,transparent 78%);pointer-events:none}
-}
-@media (max-width:420px){.card-bottom p{font-size:18px;max-width:88%}}
