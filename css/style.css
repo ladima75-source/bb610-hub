@@ -70,3 +70,25 @@ footer { display: none !important; }
   .card-bottom::before{content:"";position:absolute;z-index:-1;left:-14px;bottom:-12px;width:min(92%,360px);height:132px;border-radius:18px;background:radial-gradient(ellipse at 22% 78%,rgba(0,0,0,.66),rgba(0,0,0,.28) 58%,transparent 78%);pointer-events:none}
 }
 @media (max-width:420px){.card-bottom p{font-size:18px;max-width:88%}}
+
+/* Direction-only crop from original BB610 master logos */
+.direction-logo-crop{position:relative;width:min(310px,58%);height:64px;overflow:hidden}
+.direction-logo-crop .card-logo{position:absolute;left:0;top:-58px;width:100%;height:118px;object-fit:contain;object-position:left center;max-width:none}
+.direction-logo-crop.water-logo{height:58px}
+.direction-logo-crop.water-logo .card-logo{top:-60px}
+.direction-logo-crop.market-logo .card-logo{top:-55px}
+.direction-logo-crop.berry-logo .card-logo{top:-57px}
+@media(max-width:767px){
+.direction-logo-crop{width:min(235px,66%);height:50px}
+.direction-logo-crop .card-logo{width:100%;height:88px;top:-41px}
+.direction-logo-crop.water-logo{height:45px}
+.direction-logo-crop.water-logo .card-logo{top:-43px}
+.direction-logo-crop.market-logo .card-logo{top:-40px}
+.direction-logo-crop.berry-logo .card-logo{top:-41px}}
+@media(max-width:420px){
+.direction-logo-crop{width:min(205px,68%);height:46px}
+.direction-logo-crop .card-logo{height:78px;top:-36px}
+.direction-logo-crop.water-logo{height:41px}
+.direction-logo-crop.water-logo .card-logo{top:-38px}
+.direction-logo-crop.market-logo .card-logo{top:-35px}
+.direction-logo-crop.berry-logo .card-logo{top:-36px}}
