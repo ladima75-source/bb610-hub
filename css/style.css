@@ -1,244 +1,84 @@
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:#000}
-body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#eef0f3;-webkit-font-smoothing:antialiased}
+body{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#D9E1E5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.page{position:relative;min-height:100vh;overflow:hidden;background:#000}
-.page-glow{position:absolute;inset:0;pointer-events:none;background:
-radial-gradient(60% 45% at 50% 12%,rgba(58,60,66,.28),transparent 70%),
-radial-gradient(70% 60% at 50% 60%,rgba(46,48,52,.22),transparent 75%)}
-.container{position:relative;width:100%;max-width:1270px;margin:0 auto;padding:35px 24px 32px}
-.site-logo{display:flex;flex-direction:column;align-items:center}
-.logo-main{display:flex;align-items:flex-end;justify-content:center;gap:4px}
-.logo-main .bb,.logo-main .n610{font-size:92px;font-weight:800;line-height:.85;letter-spacing:.01em}
-.bb{color:#167dff}.n610{color:#70c329}
-.leaf-mark{width:74px;height:74px;margin-bottom:4px;color:#70c329}
-.systems{margin-top:12px;font-size:16px;font-weight:500;letter-spacing:.62em;color:#888d95}
-.grid{margin-top:42px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 32px}
-.card{--accent:#fff;position:relative;display:block;overflow:hidden;aspect-ratio:616/365;border-radius:20px;border:1px solid color-mix(in srgb,var(--accent) 48%,transparent);background:linear-gradient(145deg,rgba(46,47,50,.85),rgba(20,21,23,.9) 45%,#080808 100%);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 18px 50px -20px rgba(0,0,0,.9),0 0 22px -12px color-mix(in srgb,var(--accent) 40%,transparent),inset 0 0 40px -18px color-mix(in srgb,var(--accent) 22%,transparent);cursor:pointer;transition:box-shadow .35s ease,border-color .35s ease}
-.card:hover{border-color:color-mix(in srgb,var(--accent) 82%,transparent);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 18px 50px -20px rgba(0,0,0,.9),0 0 42px -8px color-mix(in srgb,var(--accent) 60%,transparent),inset 0 0 60px -16px color-mix(in srgb,var(--accent) 34%,transparent)}
+.page{position:relative;min-height:100dvh;overflow:hidden;background:#000}
+.page-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 45% at 50% 10%,rgba(58,60,66,.25),transparent 70%),radial-gradient(70% 60% at 50% 60%,rgba(46,48,52,.18),transparent 75%)}
+.container{position:relative;width:100%;max-width:1270px;height:100dvh;margin:0 auto;padding:14px 24px;display:flex;flex-direction:column;justify-content:center}
+.site-logo{display:flex;flex-direction:column;align-items:center;flex:0 0 auto}
+.site-logo-image{display:block;width:min(300px,29vw);max-height:12.5dvh;height:auto;object-fit:contain}
+.hub-intro{margin-top:6px;text-align:center}
+.hub-intro h1{margin:0;font-size:clamp(17px,1.45vw,23px);line-height:1.12;letter-spacing:.065em;font-weight:650;color:#E3E7E9}
+.hub-intro h1 span{color:#A7B1B7;font-weight:500}
+.hub-intro p{margin:5px auto 0;max-width:820px;font-size:clamp(15px,1.12vw,18px);line-height:1.28;color:#A7B1B7;font-weight:400}
+.grid{margin-top:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px 22px;min-height:0}
+.card{--accent:#fff;position:relative;display:block;overflow:hidden;height:min(30.5dvh,300px);border-radius:18px;border:1px solid color-mix(in srgb,var(--accent) 48%,transparent);background:#080808;box-shadow:0 0 0 1px rgba(0,0,0,.4),0 12px 34px -20px rgba(0,0,0,.9),0 0 22px -12px color-mix(in srgb,var(--accent) 38%,transparent);cursor:pointer;transition:border-color .25s ease,box-shadow .25s ease}
 .garden{--accent:#70c329}.water{--accent:#0aa8ff}.market{--accent:#ff6a00}.berry{--accent:#9854e6}
-.card-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;filter:brightness(.86) saturate(1.08) contrast(1.03);transform:scale(1.01)}
-.card-fade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.76) 0%,rgba(0,0,0,.54) 34%,rgba(0,0,0,.18) 63%,rgba(0,0,0,.06) 100%)}
-.card-content{position:relative;height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:64px 32px 42px 80px}
-.brand-mini{display:flex;align-items:flex-end;gap:2px}
-.brand-mini .bb,.brand-mini .n610{font-size:50px;font-weight:800;line-height:1}
-.leaf-mini{width:42px;height:42px;margin-bottom:2px;color:#70c329}
-.direction{margin-top:8px;font-size:36px;font-weight:600;line-height:1;letter-spacing:.14em;color:var(--accent)}
-.divider{margin-top:16px;width:215px;height:10px;color:var(--accent);overflow:visible}
-.divider path{fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round}
-.card-bottom .icon{width:32px;height:32px;color:var(--accent)}
+.card-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center right;filter:brightness(.84) saturate(1.08) contrast(1.03);transform:scale(1.005);transition:filter .25s ease}
+.card-fade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.70) 0%,rgba(0,0,0,.57) 43%,rgba(0,0,0,.34) 73%,rgba(0,0,0,.24) 100%)}
+.card-content{position:relative;height:100%;display:grid;grid-template-rows:auto 1fr auto;padding:20px 28px 17px 38px}
+.direction-logo-crop{position:relative;width:min(235px,51%);height:45px;overflow:hidden}
+.direction-logo-crop .card-logo{position:absolute;left:0;top:-46px;width:100%;height:94px;object-fit:contain;object-position:left center;max-width:none}
+.direction-logo-crop.water-logo{height:42px}.direction-logo-crop.water-logo .card-logo{top:-54px}
+.direction-logo-crop.water-logo::before{content:"";position:absolute;z-index:5;left:0;right:0;top:0;height:8px;background:linear-gradient(to bottom,#08090a 20%,rgba(8,9,10,.78) 55%,transparent);pointer-events:none}
+.direction-logo-crop.market-logo .card-logo{top:-44px}.direction-logo-crop.berry-logo .card-logo{top:-46px}
+.divider{margin-top:5px;width:155px;height:8px;color:var(--accent);overflow:visible}
+.divider path{fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round}
+.card-copy{align-self:end;max-width:90%;padding-bottom:8px}
+.icon{width:22px;height:22px;color:var(--accent)}
 .icon path,.icon circle{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linejoin:round}
-.card-bottom p{margin:14px 0 0;max-width:68%;font-size:23px;line-height:1.28;font-weight:650;letter-spacing:-.018em;color:#fff;text-wrap:balance;text-shadow:0 2px 14px rgba(0,0,0,.95),0 1px 3px rgba(0,0,0,.9)}
-footer{margin-top:36px;display:flex;align-items:center;justify-content:center;gap:16px;font-size:13px;letter-spacing:.2em;color:#888d95;opacity:.5;text-align:center}
-footer i{display:block;width:1px;height:16px;background:currentColor}
-@media (max-width:767px){
-  .container{padding:24px 16px 28px}
-  .logo-main .bb,.logo-main .n610{font-size:56px}
-  .leaf-mark{width:52px;height:52px}
-  .systems{font-size:13px}
-  .grid{grid-template-columns:1fr;margin-top:32px;gap:18px}
-  .card{aspect-ratio:5/4}
-  .card-image{width:100%;filter:brightness(.82) saturate(1.12) contrast(1.04);object-position:center}
-  .card-content{padding:24px}
-  .brand-mini .bb,.brand-mini .n610{font-size:30px}
-  .leaf-mini{width:26px;height:26px}
-  .direction{font-size:26px}
-  .divider{width:150px}
-  .card-bottom .icon{width:28px;height:28px}
-  .card-bottom p{font-size:19px;line-height:1.25;font-weight:650;max-width:82%;letter-spacing:-.02em}
-  footer{flex-wrap:wrap;font-size:11px;gap:10px}
+.card-copy h2{margin:5px 0 0;font-size:clamp(16px,1.27vw,20px);line-height:1.07;font-weight:650;letter-spacing:.01em;color:#D9E1E5;text-shadow:0 2px 12px rgba(0,0,0,.9)}
+.offer-accent{color:color-mix(in srgb,var(--accent) 72%,#D9E1E5 28%)}
+.card-copy p{margin:5px 0 0;max-width:100%;font-size:clamp(12px,.94vw,15px);line-height:1.22;color:#A7B1B7;font-weight:400}
+.card-cta{display:flex;align-items:center;width:100%;gap:13px;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.065em;white-space:nowrap;transition:filter .25s ease}
+.cta-label{flex:0 0 auto}
+.cta-line{position:relative;flex:1 1 auto;height:10px;min-width:24px;transform:translateX(0);transition:transform .25s ease,filter .25s ease}
+.cta-line::before{content:"";position:absolute;left:0;right:7px;top:50%;height:1px;background:currentColor;transform:translateY(-50%)}
+.cta-line::after{content:"";position:absolute;right:0;top:50%;width:8px;height:8px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-50%) rotate(45deg);transform-origin:center}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 72%,transparent);box-shadow:0 0 0 1px rgba(0,0,0,.4),0 18px 50px -20px rgba(0,0,0,.9),0 0 28px -13px color-mix(in srgb,var(--accent) 42%,transparent)}
+.card:hover .card-image{filter:brightness(.89) saturate(1.09) contrast(1.035)}
+.card:hover .card-cta{filter:brightness(1.12)}
+.card:hover .cta-line{transform:translateX(4px)}
+@media(min-width:768px) and (max-height:800px){
+ .container{padding:8px 22px}
+ .site-logo-image{width:min(245px,26vw);max-height:10.5dvh}
+ .hub-intro{margin-top:3px}.hub-intro h1{font-size:16px}.hub-intro p{font-size:13px;margin-top:3px}
+ .grid{margin-top:8px;gap:8px 18px}
+ .card{height:29.5dvh}
+ .card-content{padding:14px 22px 12px 30px}
+ .direction-logo-crop{width:min(205px,48%);height:38px}.direction-logo-crop .card-logo{height:80px;top:-40px}
+ .direction-logo-crop.water-logo{height:36px}.direction-logo-crop.water-logo .card-logo{top:-46px}
+ .direction-logo-crop.market-logo .card-logo{top:-38px}.direction-logo-crop.berry-logo .card-logo{top:-40px}
+ .divider{width:135px;margin-top:3px}
+ .icon{width:18px;height:18px}.card-copy{padding-bottom:5px}
+ .card-copy h2{font-size:15px;margin-top:2px}.card-copy p{font-size:11.5px;margin-top:3px}
+ .card-cta{font-size:9.5px;gap:10px}
 }
-
-/* BB610 MASTER LOGOS */
-.site-logo-image{display:block;width:min(390px,38vw);height:auto;object-fit:contain}
-.card-logo{display:block;width:min(310px,58%);height:118px;object-fit:contain;object-position:left center}
-@media (max-width:767px){
- .site-logo-image{width:min(280px,72vw)}
- .card-logo{width:min(235px,66%);height:88px}
-}
-@media (max-width:420px){
- .card-logo{width:min(205px,68%);height:78px}
-}
-
-
-/* BB610 HUB — footer removed; original desktop scale preserved */
-footer { display: none !important; }
-
-@media (max-width:767px){
-  .card-fade{background:linear-gradient(180deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.04) 38%,rgba(0,0,0,.18) 58%,rgba(0,0,0,.78) 100%),linear-gradient(90deg,rgba(0,0,0,.42) 0%,rgba(0,0,0,.12) 58%,rgba(0,0,0,.03) 100%)}
-  .card-bottom{position:relative;isolation:isolate}
-  .card-bottom::before{content:"";position:absolute;z-index:-1;left:-14px;bottom:-12px;width:min(92%,360px);height:132px;border-radius:18px;background:radial-gradient(ellipse at 22% 78%,rgba(0,0,0,.66),rgba(0,0,0,.28) 58%,transparent 78%);pointer-events:none}
-}
-@media (max-width:420px){.card-bottom p{font-size:18px;max-width:88%}}
-
-/* Direction-only crop from original BB610 master logos */
-.direction-logo-crop{position:relative;width:min(310px,58%);height:64px;overflow:hidden}
-.direction-logo-crop .card-logo{position:absolute;left:0;top:-58px;width:100%;height:118px;object-fit:contain;object-position:left center;max-width:none}
-.direction-logo-crop.water-logo .card-logo{top:-54px}
-.direction-logo-crop.market-logo .card-logo{top:-55px}
-.direction-logo-crop.berry-logo .card-logo{top:-57px}
 @media(max-width:767px){
-.direction-logo-crop{width:min(235px,66%);height:50px}
-.direction-logo-crop .card-logo{width:100%;height:88px;top:-41px}
-.direction-logo-crop.water-logo .card-logo{top:-39px}
-.direction-logo-crop.market-logo .card-logo{top:-40px}
-.direction-logo-crop.berry-logo .card-logo{top:-41px}}
+ html{scroll-snap-type:y mandatory;scroll-padding-top:116px}
+ .page{overflow:visible;min-height:100dvh}.page-glow{position:fixed}
+ .container{height:auto;min-height:100dvh;padding:0 14px 12px;display:block}
+ .site-logo{position:sticky;top:0;z-index:30;height:116px;min-height:116px;justify-content:center;background:linear-gradient(to bottom,#000 84%,rgba(0,0,0,.97) 93%,transparent)}
+ .site-logo-image{width:min(195px,54vw);max-height:74px}
+ .hub-intro{display:none}
+ .grid{display:block;margin-top:0}
+ .card{height:calc(100dvh - 126px);min-height:470px;max-height:none;margin:0 0 10px;scroll-snap-align:start;scroll-snap-stop:always}
+ .card-content{padding:24px 22px 22px;grid-template-rows:auto 1fr auto}
+ .card-fade{background:linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.07) 38%,rgba(0,0,0,.30) 60%,rgba(0,0,0,.84) 100%)}
+ .direction-logo-crop{width:min(235px,72%);height:52px}.direction-logo-crop .card-logo{height:90px;top:-42px}
+ .direction-logo-crop.water-logo{height:47px}.direction-logo-crop.water-logo .card-logo{top:-51px}
+ .direction-logo-crop.market-logo .card-logo{top:-41px}.direction-logo-crop.berry-logo .card-logo{top:-42px}
+ .divider{margin-top:9px;width:160px}
+ .card-copy{max-width:100%;padding-bottom:14px}
+ .icon{width:27px;height:27px}.card-copy h2{font-size:22px;line-height:1.06;margin-top:7px}.card-copy p{font-size:15px;line-height:1.27;margin-top:7px}
+ .card-cta{font-size:11.5px;gap:11px}
+}
 @media(max-width:420px){
-.direction-logo-crop{width:min(205px,68%);height:46px}
-.direction-logo-crop .card-logo{height:78px;top:-36px}
-.direction-logo-crop.water-logo .card-logo{top:-34px}
-.direction-logo-crop.market-logo .card-logo{top:-35px}
-.direction-logo-crop.berry-logo .card-logo{top:-36px}}
-
-
-/* ===== BB610 HUB vNEXT ===== */
-.hub-intro{margin-top:22px;text-align:center}
-.hub-intro h1{margin:0;font-size:clamp(20px,2vw,30px);line-height:1.15;letter-spacing:.075em;font-weight:780;color:#f6f7f9}
-.hub-intro p{margin:9px auto 0;max-width:720px;font-size:16px;line-height:1.45;color:#aeb4bd}
-.grid{margin-top:30px}
-.card-fade{background:linear-gradient(90deg,rgba(0,0,0,.64),rgba(0,0,0,.50) 42%,rgba(0,0,0,.26) 72%,rgba(0,0,0,.16))}
-.card-content{padding:42px 34px 34px 58px}
-.card-bottom{max-width:82%}
-.card-bottom h2{margin:10px 0 0;font-size:clamp(21px,1.85vw,28px);line-height:1.08;font-weight:820;letter-spacing:.01em;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.9)}
-.card-bottom p{margin:9px 0 0;max-width:100%;font-size:17px;line-height:1.32;font-weight:500;color:#e8ebef}
-.card-cta{display:inline-block;margin-top:15px;font-size:13px;font-weight:820;letter-spacing:.075em;color:var(--accent);text-shadow:0 1px 9px rgba(0,0,0,.9)}
-.card-image{transition:filter .35s ease,transform .45s ease}
-.card:hover .card-image{filter:brightness(.92) saturate(1.14) contrast(1.04);transform:scale(1.025)}
-
-/* WATER crop: hide every remnant of the BB610 line */
-.direction-logo-crop.water-logo{height:58px}
-.direction-logo-crop.water-logo .card-logo{top:-64px}
-.direction-logo-crop.water-logo::before{content:"";position:absolute;z-index:4;left:0;right:0;top:0;height:9px;background:linear-gradient(#08090a 20%,rgba(8,9,10,0));pointer-events:none}
-
-/* preview pages */
-.preview-page{min-height:100dvh;background:#050506;color:#f3f5f7}
-.preview-wrap{position:relative;width:min(980px,calc(100% - 32px));min-height:100dvh;margin:auto;display:flex;align-items:center;padding:58px 0}
-.preview-back{position:absolute;top:24px;left:0;font-size:13px;letter-spacing:.08em;color:#aeb4bc}
-.preview-panel{--pa:#fff;position:relative;width:100%;overflow:hidden;border:1px solid color-mix(in srgb,var(--pa) 48%,transparent);border-radius:24px;padding:clamp(36px,7vw,76px);background:linear-gradient(145deg,#25272a,#111214 58%,#080808);box-shadow:0 25px 70px rgba(0,0,0,.55),0 0 34px -18px var(--pa)}
-.preview-brand{font-size:clamp(34px,7vw,68px);font-weight:850;letter-spacing:.08em;color:var(--pa)}
-.preview-panel h1{margin:34px 0 0;max-width:780px;font-size:clamp(31px,6vw,60px);line-height:1;letter-spacing:-.035em}
-.preview-lead{margin:20px 0 0;max-width:690px;font-size:clamp(17px,2.2vw,22px);line-height:1.45;color:#d5d9df}
-.preview-status{margin:30px 0 0;font-size:13px;letter-spacing:.12em;color:#9097a0;text-transform:uppercase}
-.preview-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.preview-tags span{padding:10px 14px;border:1px solid rgba(255,255,255,.14);border-radius:999px;font-size:12px;letter-spacing:.08em;color:#e0e4e9}
-.preview-cta{display:inline-block;margin-top:28px;color:var(--pa);font-size:14px;font-weight:800;letter-spacing:.08em}
-
-/* MOBILE: one complete direction card per screen/snap */
-@media(max-width:767px){
- html{scroll-snap-type:y mandatory}
- .page{overflow:visible}
- .container{padding:16px 14px 18px}
- .site-logo{min-height:26dvh;justify-content:center;scroll-snap-align:start}
- .site-logo-image{width:min(220px,64vw)}
- .hub-intro{margin-top:13px}
- .hub-intro h1{font-size:16px;line-height:1.17;letter-spacing:.04em}
- .hub-intro p{margin-top:6px;max-width:340px;font-size:12.5px;line-height:1.35}
- .grid{display:block;margin-top:8px}
- .card{height:74dvh;min-height:500px;aspect-ratio:auto;margin:0 0 8px;scroll-snap-align:start;scroll-snap-stop:always}
- .card-content{padding:24px 22px 27px}
- .card-fade{background:linear-gradient(180deg,rgba(0,0,0,.30),rgba(0,0,0,.16) 35%,rgba(0,0,0,.48) 64%,rgba(0,0,0,.84))}
- .card-bottom{max-width:100%}
- .card-bottom::before{display:none}
- .card-bottom h2{font-size:23px;line-height:1.05;max-width:96%}
- .card-bottom p{font-size:16px;line-height:1.28;max-width:96%}
- .card-cta{font-size:12px;margin-top:13px}
- .direction-logo-crop{width:min(245px,72%);height:54px}
- .direction-logo-crop .card-logo{height:92px;top:-43px}
- .direction-logo-crop.water-logo{height:52px}
- .direction-logo-crop.water-logo .card-logo{top:-49px}
- .direction-logo-crop.water-logo::before{height:8px}
- .direction-logo-crop.market-logo .card-logo{top:-42px}
- .direction-logo-crop.berry-logo .card-logo{top:-43px}
-}
-
-
-/* ===== BB610 HUB FINAL TYPOGRAPHY / CTA ===== */
-.hub-intro h1{
-  color:#E3E7E9;
-  font-weight:650;
-}
-.hub-intro p{
-  color:#A7B1B7;
-  font-size:19px;
-  font-weight:400;
-}
-.card-fade{
-  background:linear-gradient(90deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.56) 42%,rgba(0,0,0,.34) 72%,rgba(0,0,0,.24) 100%);
-}
-.card-bottom h2{
-  color:#D9E1E5;
-  font-weight:680;
-  letter-spacing:.012em;
-}
-.card-bottom h2 .offer-accent{
-  color:color-mix(in srgb,var(--accent) 76%,#D9E1E5 24%);
-}
-.card-bottom p{
-  color:#A7B1B7;
-  font-weight:400;
-}
-.card-cta{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  color:var(--accent);
-  font-weight:700;
-  letter-spacing:.07em;
-  white-space:nowrap;
-}
-.card-cta::after{
-  content:"";
-  display:block;
-  width:52px;
-  height:1px;
-  background:currentColor;
-  box-shadow:18px 0 0 -0.1px currentColor;
-  clip-path:polygon(0 0,calc(100% - 7px) 0,calc(100% - 7px) -4px,100% 50%,calc(100% - 7px) calc(100% + 4px),calc(100% - 7px) 100%,0 100%);
-  transition:width .25s ease;
-}
-.card:hover .card-cta::after{width:70px}
-.card{
-  transition:border-color .25s ease,box-shadow .25s ease;
-}
-.card:hover{
-  border-color:color-mix(in srgb,var(--accent) 70%,transparent);
-  box-shadow:0 0 0 1px rgba(0,0,0,.4),0 18px 50px -20px rgba(0,0,0,.9),0 0 28px -13px color-mix(in srgb,var(--accent) 44%,transparent),inset 0 0 40px -20px color-mix(in srgb,var(--accent) 18%,transparent);
-}
-.card:hover .card-image{
-  filter:brightness(.90) saturate(1.10) contrast(1.045);
-  transform:scale(1.012);
-}
-.card-image{transition:filter .25s ease,transform .25s ease}
-
-/* WATER: stricter crop to remove BB610 remnants */
-.direction-logo-crop.water-logo{
-  height:53px;
-  overflow:hidden;
-}
-.direction-logo-crop.water-logo .card-logo{top:-67px}
-.direction-logo-crop.water-logo::before{
-  content:"";
-  position:absolute;
-  z-index:5;
-  left:0;right:0;top:0;
-  height:12px;
-  background:linear-gradient(to bottom,#08090a 25%,rgba(8,9,10,.82) 55%,rgba(8,9,10,0));
-  pointer-events:none;
-}
-
-@media(max-width:767px){
-  .hub-intro h1{color:#E3E7E9;font-weight:650}
-  .hub-intro p{font-size:15px;color:#A7B1B7;font-weight:400}
-  .card-bottom h2{font-weight:680;color:#D9E1E5}
-  .card-bottom p{font-size:16px;color:#A7B1B7;font-weight:400}
-  .card-cta{font-size:12px;gap:10px}
-  .card-cta::after{width:42px}
-  .card:hover .card-cta::after{width:42px}
-  .direction-logo-crop.water-logo{height:48px}
-  .direction-logo-crop.water-logo .card-logo{top:-52px}
-  .direction-logo-crop.water-logo::before{height:10px}
+ html{scroll-padding-top:104px}.site-logo{height:104px;min-height:104px}.site-logo-image{width:min(180px,52vw);max-height:67px}
+ .card{height:calc(100dvh - 114px);min-height:445px}.card-content{padding:21px 19px 20px}
+ .card-copy h2{font-size:20px}.card-copy p{font-size:14.5px}.card-cta{font-size:10.5px}
 }
 @media(hover:none){
-  .card:hover .card-image{filter:brightness(.82) saturate(1.12) contrast(1.04);transform:scale(1.01)}
-  .card:hover{border-color:color-mix(in srgb,var(--accent) 48%,transparent)}
+ .card:hover .card-image{filter:brightness(.84) saturate(1.08) contrast(1.03)}
+ .card:hover .cta-line{transform:none}.card:hover .card-cta{filter:none}
 }
