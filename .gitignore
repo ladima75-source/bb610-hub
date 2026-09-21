@@ -1,0 +1,6 @@
+source/node_modules/
+source/dist/
+source/static-export/
+source/.wrangler/
+source/.dev-server*.log
+.DS_Store
